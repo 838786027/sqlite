@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- DB连接四要素 -->
+		<property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+		<property name="hibernate.connection.url">jdbc:sqlite:test.db</property>
+		<property name="hibernate.connection.username"></property>
+		<property name="hibernate.connection.password"></property>
+
+		<!-- 方言 -->
+		<property name="dialect">sqlite.SQLiteDialect</property>
+
+		<!--C3P0 数据源(数据库连接池) -->
+<!-- 		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property> -->
+
+		<!-- 当前Session上下文 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- 自动建表 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- 显示SQL -->
+		<property name="hibernate.show_sql">false</property>
+
+		<!-- 格式化SQL -->
+		<property name="hibernate.format_sql">false</property>
+		
+		<mapping class="com.cpphot.DO.UserDO" />
+	</session-factory>
+</hibernate-configuration>

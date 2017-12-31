@@ -1,0 +1,2 @@
+SQLite不需要安装，只需要引入jdbc即可
+SQLite可以使用hibernate操作
